@@ -1,13 +1,14 @@
 // import Post from "@/components/PostShow"
 import style from './style/index.module.css';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, lazy } from 'react';
 import Image from 'next/image';
 import Typed from 'typed.js';
 import { Category, Categories } from '@/types';
-import Avatar from '@/components/Avatar';
 import avatar from '@/assets/img/avatar.jpg';
 import arrow from '@/assets/img/arrow-down.svg';
 
+const Avatar = lazy(() => import('@/components/Avatar'));
+const Author = lazy(() => import('@/components/Author'));
 type HomeProps = {
   categories: Categories
 }
@@ -43,8 +44,8 @@ export default function Home(props: HomeProps) {
           size='350px'
           alt="avatar"
         />
-        <div id="type-string" >
-          <p className={style.type}>Welcome to Patrick's Blog</p>
+        <div id="type-string" style={{ display: 'none' }}>
+          <p>Welcome to Patrick's Blog</p>
         </div>
         <div id={style.strings}>
           <span ref={type} ></span>
@@ -59,17 +60,20 @@ export default function Home(props: HomeProps) {
 
 
       </div>
-      <div id={style.main} ref={mainRef}>
-        <div id={style.category}>
-          <h1>Category</h1>
-        </div>
-        <div id={style.content}>
-          <h1>Content</h1>
-        </div>
-        <div id={style.author}>
-          <h1>Author</h1>
+      <div id={style['main-container']}>
+        <div id={style.main} ref={mainRef}>
+          <div id={style.category}>
+            <h1>Category</h1>
+          </div>
+          <div id={style.content}>
+            <h1>Content</h1>
+          </div>
+          <div id={style.author}>
+            <Author />
+          </div>
         </div>
       </div>
+
     </>
 
   )

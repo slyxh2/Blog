@@ -1,3 +1,7 @@
+#main-container{
+    background-color: #f2f3f5;
+
+}
 #main{
     max-width: 1200px;
     margin: auto;
@@ -23,11 +27,9 @@
 }
 @keyframes img-gradient {
     0% {
-      transform: translateY(-100%);
       opacity: 0;
     }
     100% {
-      transform: translateY(0);
       opacity: 1;
     }
 }
@@ -73,23 +75,19 @@
     height: 300vh;
     max-width: 1200px;
     width: 100%;
-    border: 1px solid red;
     display: flex;
     justify-content: space-between;
 }
 
 #category{
     width: 180px;
-    border: 1px solid blueviolet;
 }
 
 #content{
     width: 100%;
-    border: 1px solid yellow;
     margin: 0 20px;
 }
 
 #author{
     width: 350px;
-    border: 1px solid black;
 }
