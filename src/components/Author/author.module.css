@@ -1,7 +1,7 @@
 #author{
     width: 100%;
     height: 140px;
-    background-color: #fff;
+    background-color: #f5f5d5;
     border-radius: 8px;
     position: sticky;
     top:0;
@@ -27,7 +27,7 @@
     padding-top: 40px;
 }
 .icon{
-    transition: all 0.5s;
+    transition: all 0.3s;
 }
 .icon:hover{
     transform: translateY(-3px);

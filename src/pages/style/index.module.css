@@ -1,5 +1,5 @@
 #main-container{
-    background-color: #f2f3f5;
+    /* background-color: #f2f3f5; */
 
 }
 #main{
@@ -80,7 +80,7 @@
 }
 
 #category{
-    width: 180px;
+    width: 250px;
 }
 
 #content{

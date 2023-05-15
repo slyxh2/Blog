@@ -1,28 +1,32 @@
 // import Post from "@/components/PostShow"
-import style from './style/index.module.css';
-import { useEffect, useRef, lazy } from 'react';
+
+import { useEffect, useRef, lazy, useState } from 'react';
+import { GetServerSidePropsContext } from 'next';
 import Image from 'next/image';
 import Typed from 'typed.js';
-import { Category, Categories } from '@/types';
+import { Categories } from '@/types';
+import style from './style/index.module.css';
 import avatar from '@/assets/img/avatar.jpg';
 import arrow from '@/assets/img/arrow-down.svg';
 
 const Avatar = lazy(() => import('@/components/Avatar'));
 const Author = lazy(() => import('@/components/Author'));
+const Category = lazy(() => import('@/components/Category'));
+
 type HomeProps = {
   categories: Categories
 }
 
 export default function Home(props: HomeProps) {
-  // const { categories } = props;
+  const { categories } = props;
   const type = useRef(null);
   const mainRef = useRef(null);
   const handleClickArrow = () => {
-    console.log(22);
     if (mainRef.current) {
       (mainRef.current as HTMLElement).scrollIntoView({ behavior: "smooth" });
     }
   }
+  const [selected, setSelected] = useState<string>('');
   useEffect(() => {
     const typed = new Typed(type.current, {
       stringsElement: '#type-string',
@@ -30,7 +34,6 @@ export default function Home(props: HomeProps) {
     });
 
     return () => {
-      // Destroy Typed instance during cleanup to stop animation
       typed.destroy();
     };
   }, []);
@@ -57,13 +60,12 @@ export default function Home(props: HomeProps) {
           id={style.arrow}
           onClick={handleClickArrow}
         />
-
-
       </div>
+
       <div id={style['main-container']}>
         <div id={style.main} ref={mainRef}>
           <div id={style.category}>
-            <h1>Category</h1>
+            <Category selected={selected} categories={categories} setSelected={setSelected} />
           </div>
           <div id={style.content}>
             <h1>Content</h1>
@@ -79,10 +81,11 @@ export default function Home(props: HomeProps) {
   )
 }
 
-// export async function getServerSideProps() {
-//   const result = await fetch("http://localhost:3000/api/category");
-//   const categories = await result.json();
-//   return {
-//     props: { categories }
-//   }
-// }
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const base = 'http://' + context.req.headers.host;
+  const response = await fetch(base + "/api/category");
+  const result = await response.json();
+  return {
+    props: { categories: [{ name: "All Post", id: "" }, ...result.categories] }
+  }
+}
