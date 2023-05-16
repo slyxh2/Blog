@@ -41,7 +41,7 @@ export default function Home(props: HomeProps) {
   return (
     <>
       <Head>
-        <title>Patrick's Blog</title>
+        <title>Patrick&apos;s Blog</title>
       </Head>
       <div id={style.cover} />
       <div id={style.show}>
@@ -52,7 +52,7 @@ export default function Home(props: HomeProps) {
           alt="avatar"
         />
         <div id="type-string" style={{ display: 'none' }}>
-          <p>Welcome to Patrick's Blog</p>
+          <p>Welcome to Patrick&apos;s Blog</p>
         </div>
         <div id={style.strings}>
           <span ref={type} ></span>

@@ -19,11 +19,12 @@ const Markdown: React.FC<MarkdownProps> = ({ post }) => {
                 return !inline && match ? (
                     <SyntaxHighlighter
                         {...props}
-                        children={String(children).replace(/\n$/, '')}
                         style={solarizedlight}
                         language={match[1]}
                         PreTag="div"
-                    />
+                    >
+                        {String(children).replace(/\n$/, '')}
+                    </SyntaxHighlighter>
                 ) : (
                     <code {...props} className={className}>
                         {children}
