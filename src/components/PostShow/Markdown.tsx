@@ -11,10 +11,7 @@ const Markdown: React.FC<MarkdownProps> = ({ post }) => {
         remarkPlugins={[remarkGfm]}
         children={post}
         components={{
-            h1: ({ node, ...props }) => {
-                console.log(node, props);
-                return <h1 style={{ color: 'red' }} {...props} />;
-            },
+
             code({ node, inline, className, children, ...props }) {
                 const match = /language-(\w+)/.exec(className || '')
                 return !inline && match ? (

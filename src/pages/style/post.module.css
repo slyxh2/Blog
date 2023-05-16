@@ -1,0 +1,29 @@
+#post{
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+#table{
+    width: 300px;
+    margin-top: 30px;
+    /* margin-left: 50px; */
+    position: sticky;
+    top: 30px;
+    height: max-content;
+    flex-grow: 0;
+}
+#markdown{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 12px 15px 0 rgba(0,0,0,.24), 0 17px 50px 0 rgba(0,0,0,.19);
+    margin: 0 20px;
+}
+#inner{
+    padding: 20px;
+}
+
+
