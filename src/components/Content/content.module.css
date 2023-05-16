@@ -1,0 +1,18 @@
+.block{
+    display: block;
+    width: 100%;
+    background-color: #f5f5d5;
+    margin: 20px 0;
+    text-decoration: none;
+    color: #000;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.5s;
+}
+
+.block:hover{
+    color:#FF3659;
+    transform: scale(1.01);
+}
