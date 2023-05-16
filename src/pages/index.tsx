@@ -29,15 +29,15 @@ export default function Home(props: HomeProps) {
     }
   }
   const [selected, setSelected] = useState<string>('');
-  // useEffect(() => {
-  //   const typed = new Typed(type.current, {
-  //     stringsElement: '#type-string',
-  //     typeSpeed: 100
-  //   });
-  //   return () => {
-  //     typed.destroy();
-  //   };
-  // }, []);
+  useEffect(() => {
+    const typed = new Typed(type.current, {
+      stringsElement: '#type-string',
+      typeSpeed: 100
+    });
+    return () => {
+      typed.destroy();
+    };
+  }, []);
   return (
     <>
       <Head>
