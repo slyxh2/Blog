@@ -36,7 +36,7 @@ const Author = () => {
             <a href="mailto:xueyanhuangpatrick@gmail.com" target="_blank" className={style.icon}>
                 <Image src={email} alt="email" />
             </a>
-            <a href="https://drive.google.com/file/d/1GLC6I0yH3upknjvyAJlj6R_SK0NLsZOJ/view?usp=sharing" target="_blank" className={style.icon}>
+            <a href="https://drive.google.com/drive/folders/1h70R-6OQRS3cV-AkkAT0ZJItkI055XOW?usp=sharing" target="_blank" className={style.icon}>
                 <Image src={resume} alt="resume" />
             </a>
         </div>

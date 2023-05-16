@@ -7,6 +7,7 @@ import { handleDate } from '@/utils'
 import style from '../style/post.module.css';
 
 import { useEffect, useRef } from 'react';
+import Head from 'next/head';
 
 type PostProps = {
     post: {
@@ -34,6 +35,9 @@ export default function Post(props: PostProps) {
         };
     }, []);
     return <>
+        <Head>
+            <title>{post.header}</title>
+        </Head>
         <div id={style.header}>
             <div id="type-string" style={{ display: 'none' }}>
                 <p>{post.header}</p>
@@ -63,6 +67,15 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     const url = `http://${context.req.headers.host}/api/post/${context.query.id}`;
     const response = await fetch(url);
     const result = await response.json();
+    if (!response.ok) {
+        // Redirect to the 404 page
+        return {
+            redirect: {
+                destination: '/404',
+                permanent: false,
+            },
+        };
+    }
     return {
         props: { post: result.body.post }
     }

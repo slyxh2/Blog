@@ -1,5 +1,6 @@
 import { useEffect, useRef, lazy, useState } from 'react';
 import { GetServerSidePropsContext } from 'next';
+import Head from 'next/head';
 import Image from 'next/image';
 import Typed from 'typed.js';
 import { Categories } from '@/types';
@@ -39,6 +40,9 @@ export default function Home(props: HomeProps) {
   }, []);
   return (
     <>
+      <Head>
+        <title>Patrick's Blog</title>
+      </Head>
       <div id={style.cover} />
       <div id={style.show}>
         <Avatar
