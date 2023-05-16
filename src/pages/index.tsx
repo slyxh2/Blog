@@ -27,6 +27,7 @@ export default function Home(props: HomeProps) {
   }
   const [selected, setSelected] = useState<string>('');
   useEffect(() => {
+    console.log(type.current);
     const typed = new Typed(type.current, {
       stringsElement: '#type-string',
       typeSpeed: 100
@@ -62,7 +63,7 @@ export default function Home(props: HomeProps) {
       </div>
 
       <div id={style['main-container']}>
-        <div id={style.main} ref={mainRef}>
+        <main id={style.main} ref={mainRef}>
           <div id={style.category}>
             <Category selected={selected} categories={categories} setSelected={setSelected} />
           </div>
@@ -72,7 +73,7 @@ export default function Home(props: HomeProps) {
           <div id={style.author}>
             <Author />
           </div>
-        </div>
+        </main>
       </div>
 
     </>

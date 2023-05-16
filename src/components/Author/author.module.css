@@ -14,7 +14,10 @@
     padding-top: 5px;
 }
 
-
+.special{
+    font-family: 'Freehand', sans-serif;
+    font-size: 1.2em;
+}
 #avatar{
     display: block;
 }

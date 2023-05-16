@@ -6,10 +6,10 @@ import email from '@/assets/img/email.svg';
 import github from '@/assets/img/github.svg';
 import linkedin from '@/assets/img/linkedin.svg';
 import resume from '@/assets/img/resume.svg';
+import Avatar from '../Avatar';
 
 
-
-const Avatar = lazy(() => import('../Avatar'));
+// const Avatar = lazy(() => import('../Avatar'));
 
 const Author = () => {
 
@@ -22,8 +22,8 @@ const Author = () => {
                 alt="avatar"
             />
             <div id={style['author-inf']}>
-                <p>Patrick Huang</p>
-                <p>Tech Lover</p>
+                <p className={style.special}>Patrick Huang</p>
+                {/* <p>Tech Lover</p> */}
             </div>
         </div>
         <div id={style.social}>

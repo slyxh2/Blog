@@ -11,7 +11,9 @@ const Markdown: React.FC<MarkdownProps> = ({ post }) => {
         remarkPlugins={[remarkGfm]}
         children={post}
         components={{
-
+            img: ({ node, ...props }) => {
+                return <img style={{ maxWidth: '800px', width: '100%' }} {...props} />;
+            },
             code({ node, inline, className, children, ...props }) {
                 const match = /language-(\w+)/.exec(className || '')
                 return !inline && match ? (

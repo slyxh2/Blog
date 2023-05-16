@@ -1,18 +1,10 @@
 import React from 'react';
 import style from './content.module.css';
 import { Post } from '@/types';
+import { handleDate } from '@/utils'
 
 type ContentBlockProps = {
     post: Post
-}
-
-const handleDate = (inputDate: string): string => {
-    const date = new Date(inputDate);
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    const formattedDate = `${year}-${month}-${day}`;
-    return formattedDate;
 }
 
 const ContentBlock: React.FC<ContentBlockProps> = (props: ContentBlockProps) => {

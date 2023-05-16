@@ -50,8 +50,10 @@
     display: inline-block;
     width: 100%;
     text-align: center;
+    /* font-family: 'Freehand', sans-serif; */
     font-size: 30px;
 }
+
 @keyframes arrow-move {
     0% {
         bottom: 30px;
@@ -94,4 +96,16 @@
 
 #author{
     width: 350px;
+}
+
+@media (max-width: 1000px) {
+    #author{
+        display: none;
+    }
+}
+
+@media (max-width: 544px) {
+    #category{
+        display: none;
+    }
 }

@@ -3,11 +3,18 @@
     /* padding: 0; */
     box-sizing: border-box;
 }
+@font-face {
+    font-family: 'Freehand';
+    src: url('../../assets/fonts/Freehand-Regular.ttf') format('truetype');
+}
+::selection {
+    background:#f5f5d5; 
+    color:#FF3659;
+}
 .ant-pagination-item-active{
     border-color: #FF3659 !important;
 }
 
 .ant-pagination-item-active > a{
     color: #FF3659 !important;
-
 }
