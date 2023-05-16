@@ -8,8 +8,8 @@ import style from './style/index.module.css';
 import avatar from '@/assets/img/avatar.jpg';
 import arrow from '@/assets/img/arrow-down.svg';
 import Content from '@/components/Content';
-
-const Avatar = lazy(() => import('@/components/Avatar'));
+import Avatar from '@/components/Avatar';
+// const Avatar = lazy(() => import('@/components/Avatar'));
 const Author = lazy(() => import('@/components/Author'));
 const Category = lazy(() => import('@/components/Category'));
 
