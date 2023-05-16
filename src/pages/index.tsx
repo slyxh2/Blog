@@ -18,27 +18,28 @@ type HomeProps = {
 }
 
 export default function Home(props: HomeProps) {
-  const { categories } = props;
-  const type = useRef(null);
-  const mainRef = useRef(null);
-  const handleClickArrow = () => {
-    if (mainRef.current) {
-      (mainRef.current as HTMLElement).scrollIntoView({ behavior: "smooth" });
-    }
-  }
-  const [selected, setSelected] = useState<string>('');
-  useEffect(() => {
-    const typed = new Typed(type.current, {
-      stringsElement: '#type-string',
-      typeSpeed: 100
-    });
+  // const { categories } = props;
+  // const type = useRef(null);
+  // const mainRef = useRef(null);
+  // const handleClickArrow = () => {
+  //   if (mainRef.current) {
+  //     (mainRef.current as HTMLElement).scrollIntoView({ behavior: "smooth" });
+  //   }
+  // }
+  // const [selected, setSelected] = useState<string>('');
+  // useEffect(() => {
+  //   const typed = new Typed(type.current, {
+  //     stringsElement: '#type-string',
+  //     typeSpeed: 100
+  //   });
 
-    return () => {
-      typed.destroy();
-    };
-  }, []);
+  //   return () => {
+  //     typed.destroy();
+  //   };
+  // }, []);
   return (
     <>
+      try
       {/* <Head>
         <title>Patrick&apos;s Blog</title>
       </Head>
@@ -63,7 +64,7 @@ export default function Home(props: HomeProps) {
           id={style.arrow}
           onClick={handleClickArrow}
         />
-      </div> */}
+      </div>
 
       <div id={style['main-container']}>
         <main id={style.main} ref={mainRef}>
@@ -77,7 +78,7 @@ export default function Home(props: HomeProps) {
             <Author />
           </div>
         </main>
-      </div>
+      </div> */}
 
     </>
 
