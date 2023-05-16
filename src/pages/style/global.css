@@ -3,3 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+.ant-pagination-item-active{
+    border-color: #FF3659 !important;
+}
+
+.ant-pagination-item-active > a{
+    color: #FF3659 !important;
+
+}

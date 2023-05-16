@@ -1,5 +1,6 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import { Pagination } from 'antd';
+
 import { Post } from '@/types';
 import ContentBlock from "./ContentBlock";
 type ContentProps = {
@@ -9,7 +10,7 @@ type ContentProps = {
 const Content: React.FC<ContentProps> = (props: ContentProps) => {
     const { category } = props;
     const [posts, setPosts] = useState<Post[]>([]);
-    const [remainPage, setRemainPage] = useState<number>(0);
+    const [totalItem, setTotalItem] = useState<number>(10);
     const [currPage, setCurrPage] = useState<number>(1);
     const handlePosts = () => {
         let baseURL = `/api/allPost?page=${currPage}&size=10`;
@@ -19,21 +20,26 @@ const Content: React.FC<ContentProps> = (props: ContentProps) => {
         fetch(baseURL)
             .then(res => res.json())
             .then(data => {
-                // setPosts([...posts, ...data.posts.posts]);
                 setPosts(data.posts.posts || []);
-                setRemainPage(--data.posts.totalPage);
+                setTotalItem(data.posts.totalPage * 10);
             });
+    }
+    const handlePageClick = (page: number) => {
+        setCurrPage(page);
     }
     useEffect(() => {
         handlePosts();
-    }, [category])
+    }, [category, currPage])
     return <div>
         {
             posts.map(post => <ContentBlock key={post.id} post={post} />)
         }
-        {
-            remainPage === 0 && <div>THE END</div>
-        }
+        <Pagination
+            defaultCurrent={1}
+            total={totalItem}
+            onChange={handlePageClick}
+            style={{ width: 'max-content', margin: 'auto' }}
+        />
     </div>
 };
 
