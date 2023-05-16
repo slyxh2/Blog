@@ -9,7 +9,6 @@ type MarkdownProps = {
 const Markdown: React.FC<MarkdownProps> = ({ post }) => {
     return <ReactMarkdown
         remarkPlugins={[remarkGfm]}
-        children={post}
         components={{
             img: ({ node, ...props }) => {
                 return <img style={{ maxWidth: '800px', width: '100%' }} {...props} />;
@@ -32,7 +31,9 @@ const Markdown: React.FC<MarkdownProps> = ({ post }) => {
                 )
             }
         }}
-    />
+    >
+        {post}
+    </ReactMarkdown>
 }
 
 
