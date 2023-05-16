@@ -27,6 +27,7 @@ const Content: React.FC<ContentProps> = (props: ContentProps) => {
     const handlePageClick = (page: number) => {
         setCurrPage(page);
     }
+    handlePosts();
     useEffect(() => {
         handlePosts();
     }, [category, currPage])

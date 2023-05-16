@@ -27,16 +27,16 @@ export default function Home(props: HomeProps) {
     }
   }
   const [selected, setSelected] = useState<string>('');
-  // useEffect(() => {
-  //   const typed = new Typed(type.current, {
-  //     stringsElement: '#type-string',
-  //     typeSpeed: 100
-  //   });
+  useEffect(() => {
+    const typed = new Typed(type.current, {
+      stringsElement: '#type-string',
+      typeSpeed: 100
+    });
 
-  //   return () => {
-  //     typed.destroy();
-  //   };
-  // }, []);
+    return () => {
+      typed.destroy();
+    };
+  }, []);
   return (
     <>
       <Head>
@@ -68,12 +68,12 @@ export default function Home(props: HomeProps) {
 
       <div id={style['main-container']}>
         <main id={style.main} ref={mainRef}>
-          <div id={style.category}>
+          {/* <div id={style.category}>
             <Category selected={selected} categories={categories} setSelected={setSelected} />
-          </div>
-          <div id={style.content}>
+          </div> */}
+          {/* <div id={style.content}>
             <Content category={selected} />
-          </div>
+          </div> */}
           <div id={style.author}>
             <Author />
           </div>
