@@ -39,7 +39,7 @@ export default function Home(props: HomeProps) {
   }, []);
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>Patrick&apos;s Blog</title>
       </Head>
       <div id={style.cover} />
@@ -63,9 +63,9 @@ export default function Home(props: HomeProps) {
           id={style.arrow}
           onClick={handleClickArrow}
         />
-      </div>
+      </div> */}
 
-      {/* <div id={style['main-container']}>
+      <div id={style['main-container']}>
         <main id={style.main} ref={mainRef}>
           <div id={style.category}>
             <Category selected={selected} categories={categories} setSelected={setSelected} />
@@ -77,7 +77,7 @@ export default function Home(props: HomeProps) {
             <Author />
           </div>
         </main>
-      </div> */}
+      </div>
 
     </>
 
