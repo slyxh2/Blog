@@ -9,9 +9,11 @@ import avatar from '@/assets/img/avatar.jpg';
 import arrow from '@/assets/img/arrow-down.svg';
 import Content from '@/components/Content';
 import Avatar from '@/components/Avatar';
+import Author from '@/components/Author';
+import Category from '@/components/Category';
 // const Avatar = lazy(() => import('@/components/Avatar'));
-const Author = lazy(() => import('@/components/Author'));
-const Category = lazy(() => import('@/components/Category'));
+// const Author = lazy(() => import('@/components/Author'));
+// const Category = lazy(() => import('@/components/Category'));
 
 type HomeProps = {
   categories: Categories
@@ -66,12 +68,12 @@ export default function Home(props: HomeProps) {
 
       <div id={style['main-container']}>
         <main id={style.main} ref={mainRef}>
-          {/* <div id={style.category}>
+          <div id={style.category}>
             <Category selected={selected} categories={categories} setSelected={setSelected} />
           </div>
           <div id={style.content}>
             <Content category={selected} />
-          </div> */}
+          </div>
           <div id={style.author}>
             <Author />
           </div>
