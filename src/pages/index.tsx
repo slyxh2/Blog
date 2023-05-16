@@ -1,5 +1,3 @@
-// import Post from "@/components/PostShow"
-
 import { useEffect, useRef, lazy, useState } from 'react';
 import { GetServerSidePropsContext } from 'next';
 import Image from 'next/image';
@@ -8,6 +6,7 @@ import { Categories } from '@/types';
 import style from './style/index.module.css';
 import avatar from '@/assets/img/avatar.jpg';
 import arrow from '@/assets/img/arrow-down.svg';
+import Content from '@/components/Content';
 
 const Avatar = lazy(() => import('@/components/Avatar'));
 const Author = lazy(() => import('@/components/Author'));
@@ -68,7 +67,7 @@ export default function Home(props: HomeProps) {
             <Category selected={selected} categories={categories} setSelected={setSelected} />
           </div>
           <div id={style.content}>
-            <h1>Content</h1>
+            <Content category={selected} />
           </div>
           <div id={style.author}>
             <Author />

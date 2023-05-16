@@ -4,3 +4,9 @@ export type Category = {
 }
 export type Categories = Category[]
 
+export type Post = {
+    category: string
+    date: string
+    header: string
+    id: string
+}

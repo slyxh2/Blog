@@ -1,8 +1,5 @@
 
-import Image from 'next/image';
-import Head from 'next/head';
 import style from './category.module.css';
-import star from '@/assets/img/star.svg';
 import { Categories } from '@/types';
 import CategoryItem from './CategoryItem';
 
