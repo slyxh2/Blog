@@ -62,6 +62,7 @@ export default function Home(props: HomeProps) {
           alt="arrow"
           id={style.arrow}
           onClick={handleClickArrow}
+          priority={true}
         />
       </div>
 
