@@ -65,19 +65,19 @@ export default function Home(props: HomeProps) {
         />
       </div>
 
-      <div id={style['main-container']}>
+      {/* <div id={style['main-container']}>
         <main id={style.main} ref={mainRef}>
           <div id={style.category}>
             <Category selected={selected} categories={categories} setSelected={setSelected} />
           </div>
           <div id={style.content}>
-            {/* <Content category={selected} /> */}
+            <Content category={selected} />
           </div>
           <div id={style.author}>
             <Author />
           </div>
         </main>
-      </div>
+      </div> */}
 
     </>
 
