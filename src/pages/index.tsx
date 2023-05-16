@@ -27,23 +27,22 @@ export default function Home(props: HomeProps) {
     }
   }
   const [selected, setSelected] = useState<string>('');
-  useEffect(() => {
-    const typed = new Typed(type.current, {
-      stringsElement: '#type-string',
-      typeSpeed: 100
-    });
-
-    return () => {
-      typed.destroy();
-    };
-  }, []);
+  // useEffect(() => {
+  //   const typed = new Typed(type.current, {
+  //     stringsElement: '#type-string',
+  //     typeSpeed: 100
+  //   });
+  //   return () => {
+  //     typed.destroy();
+  //   };
+  // }, []);
   return (
     <>
       <Head>
         <title>Patrick&apos;s Blog</title>
       </Head>
-      <div id={style.cover} suppressHydrationWarning={true} />
-      <div id={style.show} suppressHydrationWarning={true}>
+      <div id={style.cover} />
+      <div id={style.show}>
         <Avatar
           src={avatar}
           id={style.avatar}
@@ -62,11 +61,10 @@ export default function Home(props: HomeProps) {
           alt="arrow"
           id={style.arrow}
           onClick={handleClickArrow}
-          priority={true}
         />
       </div>
 
-      <div id={style['main-container']} suppressHydrationWarning={true}>
+      {/* <div id={style['main-container']}>
         <main id={style.main} ref={mainRef}>
           <div id={style.category}>
             <Category selected={selected} categories={categories} setSelected={setSelected} />
@@ -78,7 +76,7 @@ export default function Home(props: HomeProps) {
             <Author />
           </div>
         </main>
-      </div>
+      </div> */}
 
     </>
 
