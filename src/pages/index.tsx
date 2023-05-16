@@ -28,7 +28,6 @@ export default function Home(props: HomeProps) {
   }
   const [selected, setSelected] = useState<string>('');
   useEffect(() => {
-    console.log(type.current);
     const typed = new Typed(type.current, {
       stringsElement: '#type-string',
       typeSpeed: 100

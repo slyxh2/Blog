@@ -24,7 +24,6 @@ export default function Post(props: PostProps) {
 
     const { post } = props;
     useEffect(() => {
-        console.log(type.current);
         const typed = new Typed(type.current, {
             stringsElement: '#type-string',
             typeSpeed: 100
