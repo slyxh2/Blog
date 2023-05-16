@@ -78,7 +78,6 @@ export default function Home(props: HomeProps) {
             <Author />
           </div>
         </main>
-        <div>test</div>
       </div>
 
     </>
