@@ -18,15 +18,15 @@ type HomeProps = {
 }
 
 export default function Home(props: HomeProps) {
-  // const { categories } = props;
-  // const type = useRef(null);
-  // const mainRef = useRef(null);
-  // const handleClickArrow = () => {
-  //   if (mainRef.current) {
-  //     (mainRef.current as HTMLElement).scrollIntoView({ behavior: "smooth" });
-  //   }
-  // }
-  // const [selected, setSelected] = useState<string>('');
+  const { categories } = props;
+  const type = useRef(null);
+  const mainRef = useRef(null);
+  const handleClickArrow = () => {
+    if (mainRef.current) {
+      (mainRef.current as HTMLElement).scrollIntoView({ behavior: "smooth" });
+    }
+  }
+  const [selected, setSelected] = useState<string>('');
   // useEffect(() => {
   //   const typed = new Typed(type.current, {
   //     stringsElement: '#type-string',
@@ -39,8 +39,7 @@ export default function Home(props: HomeProps) {
   // }, []);
   return (
     <>
-      try
-      {/* <Head>
+      <Head>
         <title>Patrick&apos;s Blog</title>
       </Head>
       <div id={style.cover} />
@@ -71,14 +70,14 @@ export default function Home(props: HomeProps) {
           <div id={style.category}>
             <Category selected={selected} categories={categories} setSelected={setSelected} />
           </div>
-          <div id={style.content}>
+          {/* <div id={style.content}>
             <Content category={selected} />
-          </div>
+          </div> */}
           <div id={style.author}>
             <Author />
           </div>
         </main>
-      </div> */}
+      </div>
 
     </>
 
