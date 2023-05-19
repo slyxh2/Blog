@@ -1,7 +1,12 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { solarizedlight } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+// import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/prism-light'
+
+import solarizedlight from 'react-syntax-highlighter/dist/cjs/styles/prism/solarizedlight';
+// import { solarizedlight } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+
+// import solarizedlight from './Theme';
 type MarkdownProps = {
     post: string
 }

@@ -1,26 +1,28 @@
-import { useEffect, useRef, lazy, useState } from 'react';
-import { GetServerSidePropsContext } from 'next';
+import { useEffect, useRef, useState } from 'react';
+// import { GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import Typed from 'typed.js';
-import { Categories } from '@/types';
+// import { Categories } from '@/types';
 import style from './style/index.module.css';
 import avatar from '@/assets/img/avatar.jpg';
 import arrow from '@/assets/img/arrow-down.svg';
-import Content from '@/components/Content';
-import Avatar from '@/components/Avatar';
-import Author from '@/components/Author';
-import Category from '@/components/Category';
-// const Avatar = lazy(() => import('@/components/Avatar'));
-// const Author = lazy(() => import('@/components/Author'));
-// const Category = lazy(() => import('@/components/Category'));
+// import Content from '@/components/Content';
+// import Avatar from '@/components/Avatar';
+// import Author from '@/components/Author';
+// import Category from '@/components/Category';
+const Avatar = dynamic(() => import('@/components/Avatar'));
+const Author = dynamic(() => import('@/components/Author'));
+const Category = dynamic(() => import('@/components/Category'), { ssr: false });
+const Content = dynamic(() => import('@/components/Content'), { ssr: false });
 
-type HomeProps = {
-  categories: Categories
-}
+// type HomeProps = {
+//   categories: Categories
+// }
 
-export default function Home(props: HomeProps) {
-  const { categories } = props;
+export default function Home() {
+  // const { categories } = props;
   const type = useRef(null);
   const mainRef = useRef(null);
   const handleClickArrow = () => {
@@ -69,7 +71,7 @@ export default function Home(props: HomeProps) {
       <div id={style['main-container']}>
         <main id={style.main} ref={mainRef}>
           <div id={style.category}>
-            <Category selected={selected} categories={categories} setSelected={setSelected} />
+            <Category selected={selected} setSelected={setSelected} />
           </div>
           <div id={style.content}>
             <Content category={selected} />
@@ -79,17 +81,15 @@ export default function Home(props: HomeProps) {
           </div>
         </main>
       </div>
-
     </>
-
   )
 }
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const base = 'http://' + context.req.headers.host;
-  const response = await fetch(base + "/api/category");
-  const result = await response.json();
-  return {
-    props: { categories: [{ name: "All Post", id: "" }, ...result.categories] }
-  }
-}
+// export async function getServerSideProps(context: GetServerSidePropsContext) {
+//   const base = 'http://' + context.req.headers.host;
+//   const response = await fetch(base + "/api/category");
+//   const result = await response.json();
+//   return {
+//     props: { categories: [{ name: "All Post", id: "" }, ...result.categories] }
+//   }
+// }

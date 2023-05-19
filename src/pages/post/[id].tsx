@@ -1,13 +1,16 @@
-import { useRouter } from 'next/router';
+
 import { GetServerSidePropsContext } from 'next';
+import dynamic from 'next/dynamic';
 import Typed from 'typed.js';
-import MarkDown from '@/components/PostShow/Markdown';
-import MarkdownNavbar from 'markdown-navbar';
+// import MarkDown from '@/components/PostShow/Markdown';
+// import MarkdownNavbar from 'markdown-navbar';
 import { handleDate } from '@/utils'
 import style from '../style/post.module.css';
 
 import { useEffect, useRef } from 'react';
 import Head from 'next/head';
+const MarkDown = dynamic(() => import('@/components/PostShow/Markdown'));
+const MarkdownNavbar = dynamic(() => import('markdown-navbar'));
 
 type PostProps = {
     post: {
@@ -19,7 +22,6 @@ type PostProps = {
     }
 }
 export default function Post(props: PostProps) {
-    // const router = useRouter();
     const type = useRef(null);
 
     const { post } = props;

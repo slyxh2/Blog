@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "ANALYZE=true next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -29,6 +29,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^13.4.3",
     "@types/markdown-navbar": "^1.4.0",
     "@types/react-syntax-highlighter": "^15.5.6"
   }
